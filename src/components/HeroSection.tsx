@@ -26,9 +26,9 @@ export default function HeroSection({ isVisible, openTelegram }: HeroSectionProp
           <span className="text-xbox-green">дешевле, чем в Microsoft Store</span>
         </h1>
         
-        <p className="text-xl md:text-2xl font-body mb-8 text-xbox-gray max-w-3xl mx-auto">
-          Купить официальную подписку Xbox Game Pass Ultimate — более 500 игр на Xbox Series X|S, Xbox One и ПК. Моментальная активация. Поддержка 24/7
-        </p>
+        <p className="text-xl md:text-2xl font-body mb-8 text-xbox-gray max-w-3xl mx-auto">У нас можно купить официальную подписку Xbox Game Pass Ultimate — более 500 игр на Xbox Series X|S, Xbox One и ПК. 
+
+Моментальная активация. Поддержка 24/7</p>
         
         <Button 
           onClick={openTelegram}
