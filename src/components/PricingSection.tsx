@@ -34,7 +34,7 @@ export default function PricingSection({ plans, openTelegram }: PricingSectionPr
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                   <Badge className="bg-[#107C10] text-white px-4 py-2 text-sm font-bold shadow-lg shadow-[#107C10]/50 border-0">
-                    ⭐ Самый популярный выбор
+                    🔥 Хит продаж
                   </Badge>
                 </div>
               )}
