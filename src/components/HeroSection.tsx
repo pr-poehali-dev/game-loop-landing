@@ -31,24 +31,11 @@ export default function HeroSection({ isVisible, openTelegram }: HeroSectionProp
         
         <Button 
           onClick={openTelegram}
-          className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-6 hover-scale shadow-lg shadow-xbox-green/30"
+          className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-8 hover-scale shadow-lg shadow-xbox-green/30"
         >
           <Icon name="MessageCircle" className="mr-2" />
           Оформить через Telegram
         </Button>
-        
-        {/* Лид-магнит */}
-        <div className="mb-8 bg-xbox-gray/10 backdrop-blur-sm border border-xbox-green/20 rounded-lg p-6 max-w-md mx-auto animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="flex items-center justify-center mb-2">
-            <span className="text-2xl mr-2">🎁</span>
-            <span className="text-lg font-semibold text-xbox-green">
-              Напиши нам и участвуй в розыгрыше игры!
-            </span>
-          </div>
-          <p className="text-xbox-gray text-sm text-center">
-            Плюс бонус каждому — расскажем в Telegram
-          </p>
-        </div>
         
         <div className="flex flex-wrap justify-center gap-4 md:gap-8">
           <Badge className="bg-xbox-green/20 text-xbox-green border border-xbox-green/50 px-4 py-2">

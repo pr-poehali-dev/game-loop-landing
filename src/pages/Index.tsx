@@ -7,13 +7,26 @@ import ActivationSection from '@/components/ActivationSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import FAQSection from '@/components/FAQSection';
 import FinalCTASection from '@/components/FinalCTASection';
+import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showLeadMagnet, setShowLeadMagnet] = useState(false);
+  const [hasShownLeadMagnet, setHasShownLeadMagnet] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    
+    // Показываем лид-магнит через 10 секунд, если не показывали в этой сессии
+    const timer = setTimeout(() => {
+      if (!hasShownLeadMagnet) {
+        setShowLeadMagnet(true);
+        setHasShownLeadMagnet(true);
+      }
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, [hasShownLeadMagnet]);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -21,6 +34,10 @@ export default function Index() {
 
   const openTelegram = () => {
     window.open('https://t.me/gameloop_bot', '_blank');
+  };
+
+  const closeLeadMagnet = () => {
+    setShowLeadMagnet(false);
   };
 
   const seoContent = {
@@ -136,6 +153,13 @@ export default function Index() {
       <FAQSection faqs={faqs} />
       
       <FinalCTASection openTelegram={openTelegram} />
+
+      {/* Lead Magnet Popup */}
+      <LeadMagnetPopup 
+        isVisible={showLeadMagnet}
+        onClose={closeLeadMagnet}
+        openTelegram={openTelegram}
+      />
 
       {/* SEO Content */}
       <section className="py-16 bg-xbox-dark">
