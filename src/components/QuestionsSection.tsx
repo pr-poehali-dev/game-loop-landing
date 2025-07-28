@@ -30,7 +30,7 @@ export default function QuestionsSection({ openTelegram }: QuestionsSectionProps
           
           <div className="mb-8 text-xbox-white">
             <p className="text-xl mb-2"></p>
-            <p className="text-lg text-xbox-gray">Напишите нам, и мы всё подскажем.</p>
+            <p className="text-xbox-gray text-2xl">Напишите нам, и мы всё подскажем.</p>
           </div>
           
           <button
