@@ -69,18 +69,18 @@ export default function Index() {
 
   const reviews = [
     {
-      name: 'Алексей М.',
-      text: 'Быстро, надежно, дешевле чем у Microsoft. Уже второй раз покупаю здесь.',
+      name: 'Виктор',
+      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично',
       rating: 5
     },
     {
-      name: 'Мария К.',
-      text: 'Активация прошла за 3 минуты! Отличный сервис, рекомендую.',
+      name: 'Андрей',
+      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! Рекомендую',
       rating: 5
     },
     {
-      name: 'Дмитрий С.',
-      text: 'Сэкономил почти 10 тысяч на годовой подписке. Все работает идеально.',
+      name: 'Анна',
+      text: 'Отличная поддержка, помогли разобраться с активацией',
       rating: 5
     }
   ];
@@ -124,7 +124,7 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url('/img/c1d87ea7-9ac3-407c-9f2f-b183cb9e50bf.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.poehali.dev/files/b77fe6fe-4e41-4ff6-aec2-387775d25d92.png')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/50 via-xbox-black/70 to-xbox-black" />
         
@@ -141,7 +141,7 @@ export default function Index() {
           
           <Button 
             onClick={openTelegram}
-            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-8 animate-glow hover-scale"
+            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-8 animate-gentle-glow hover-scale"
           >
             <Icon name="MessageCircle" className="mr-2" />
             Оформить через Telegram
@@ -197,7 +197,7 @@ export default function Index() {
                     onClick={openTelegram}
                     className="w-full bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold"
                   >
-                    Получить в Telegram
+                    Активировать
                   </Button>
                 </CardContent>
               </Card>
@@ -311,8 +311,8 @@ export default function Index() {
       {/* Final CTA */}
       <section className="py-20 relative">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url('/img/f545032a-ce47-414f-97ed-3ab99021990b.jpg')` }}
+          className="absolute inset-0 bg-cover bg-center opacity-15 blur-sm"
+          style={{ backgroundImage: `url('https://cdn.poehali.dev/files/40e65e02-745e-4e3c-9204-4b3d04a7d705.png')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-xbox-black via-xbox-black/80 to-xbox-black/60" />
         
@@ -325,7 +325,7 @@ export default function Index() {
           
           <Button 
             onClick={openTelegram}
-            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-xl px-12 py-6 animate-glow hover-scale"
+            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-xl px-12 py-6 animate-gentle-glow hover-scale"
           >
             <Icon name="MessageCircle" className="mr-2" size={24} />
             Оформить в Telegram
