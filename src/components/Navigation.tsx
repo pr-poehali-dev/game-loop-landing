@@ -1,3 +1,4 @@
+import { useState } from 'react';  
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Icon from '@/components/ui/icon';
 
@@ -6,6 +7,17 @@ interface NavigationProps {
 }
 
 export default function Navigation({ scrollToSection }: NavigationProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMenuItemClick = (id: string) => {
+    scrollToSection(id);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       {/* Navigation */}
@@ -81,12 +93,61 @@ export default function Navigation({ scrollToSection }: NavigationProps) {
                 
                 {/* Mobile Menu Button */}
                 <div className="lg:hidden ml-4">
-                  <button className="p-2 text-xbox-white hover:text-xbox-green transition-colors">
-                    <Icon name="Menu" size={24} />
+                  <button 
+                    onClick={toggleMobileMenu}
+                    className="p-2 text-xbox-white hover:text-xbox-green transition-colors"
+                  >
+                    <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
                   </button>
                 </div>
               </div>
             </TooltipProvider>
+          </div>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Mobile Menu */}
+        <div className={`lg:hidden fixed top-[88px] left-0 right-0 bg-xbox-black border-b border-xbox-green/20 z-50 transition-all duration-300 ${
+          isMobileMenuOpen 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}>
+          <div className="container mx-auto px-4 py-6 space-y-4">
+            <a 
+              href="#tarify" 
+              onClick={() => handleMenuItemClick('tarify')} 
+              className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
+            >
+              Тарифы
+            </a>
+            <a 
+              href="#chto-vkhodit" 
+              onClick={() => handleMenuItemClick('chto-vkhodit')} 
+              className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
+            >
+              Что входит
+            </a>
+            <a 
+              href="#otzyvy" 
+              onClick={() => handleMenuItemClick('otzyvy')} 
+              className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
+            >
+              Отзывы
+            </a>
+            <a 
+              href="#faq" 
+              onClick={() => handleMenuItemClick('faq')} 
+              className="block py-3 text-lg hover:text-xbox-green transition-colors"
+            >
+              FAQ
+            </a>
           </div>
         </div>
       </nav>

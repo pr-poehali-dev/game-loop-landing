@@ -9,6 +9,7 @@ import FAQSection from '@/components/FAQSection';
 import FinalCTASection from '@/components/FinalCTASection';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 import WhyUsSection from '@/components/WhyUsSection';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -152,9 +153,9 @@ export default function Index() {
       
       <WhyUsSection />
       
-      <BenefitsSection benefits={seoContent.benefits} />
-      
       <PricingSection plans={plans} openTelegram={openTelegram} />
+      
+      <BenefitsSection benefits={seoContent.benefits} />
       
       <ActivationSection />
       
@@ -170,6 +171,9 @@ export default function Index() {
         onClose={closeLeadMagnet}
         openTelegram={openTelegram}
       />
+
+      {/* Chat Widget */}
+      <ChatWidget telegramUrl="https://t.me/submanag" />
 
       {/* SEO Content */}
       <section className="py-16 bg-xbox-dark">
