@@ -70,17 +70,17 @@ export default function Index() {
   const reviews = [
     {
       name: 'Виктор',
-      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично',
+      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично — Виктор',
       rating: 5
     },
     {
       name: 'Андрей',
-      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! Рекомендую',
+      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! — Андрей',
       rating: 5
     },
     {
       name: 'Анна',
-      text: 'Отличная поддержка, помогли разобраться с активацией',
+      text: 'Отличная поддержка, помогли разобраться с активацией — Анна',
       rating: 5
     }
   ];
@@ -175,7 +175,7 @@ export default function Index() {
             {plans.map((plan, index) => (
               <Card 
                 key={index} 
-                className={`bg-xbox-black border-2 ${plan.popular ? 'border-xbox-green animate-glow' : 'border-xbox-gray/30'} hover-scale animate-fade-in`}
+                className={`bg-xbox-black border-2 ${plan.popular ? 'border-xbox-green animate-soft-glow' : 'border-xbox-gray/30'} hover-scale animate-fade-in`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardContent className="p-6 text-center relative">
@@ -185,7 +185,7 @@ export default function Index() {
                     </Badge>
                   )}
                   
-                  <h3 className="text-2xl font-heading font-bold mb-4">{plan.duration}</h3>
+                  <h3 className="text-2xl font-heading font-bold mb-4 text-xbox-bright-green">{plan.duration}</h3>
                   
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-xbox-green">{plan.price}</span>
@@ -195,7 +195,7 @@ export default function Index() {
                   
                   <Button 
                     onClick={openTelegram}
-                    className="w-full bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold"
+                    className="w-full bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold animate-soft-glow"
                   >
                     Активировать
                   </Button>
@@ -276,7 +276,18 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-xbox-gray">{review.text}</p>
+                  <p className="text-xbox-gray">
+                    {review.text.includes('—') ? (
+                      <>
+                        {review.text.split('—')[0]}
+                        <span className="font-bold text-xbox-green">— {review.text.split('—')[1]}</span>
+                      </>
+                    ) : (
+                      <>
+                        {review.text} <span className="font-bold text-xbox-green">— {review.name}</span>
+                      </>
+                    )}
+                  </p>
                 </CardContent>
               </Card>
             ))}
