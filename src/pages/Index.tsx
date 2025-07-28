@@ -142,7 +142,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-xbox-gray">
             <p className="text-lg leading-relaxed">
-              Купите подписку <strong className="text-xbox-green">Xbox Game Pass Ultimate</strong> по выгодной цене. Получите доступ к более чем <strong className="text-xbox-green">500 играм</strong>, включая EA Play, Forza Horizon, Halo, Starfield и другие хиты. Активация подписки возможна на <strong className="text-xbox-green">Xbox Series X|S, Xbox One и ПК</strong>. Мы предлагаем моментальную настройку, поддержку 24/7 и гарантию на весь срок действия.
+              У нас можно купить официальную подписку <strong className="text-xbox-green">Xbox Game Pass Ultimate</strong> — более <strong className="text-xbox-green">500 игр</strong> на Xbox Series X|S, Xbox One и ПК. Моментальная активация. Поддержка 24/7.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Index() {
       {/* Footer */}
       <footer className="py-8 pb-20 lg:pb-8 border-t border-xbox-gray/30">
         <div className="container mx-auto px-4 text-center text-xbox-gray">
-          <p>&copy; 2024 Xbox Game Pass Ultimate Store. Купить подписку в России. Все права защищены.</p>
+          <p>&copy; 2025 Xbox Game Pass Ultimate Store. Купить подписку в России. Все права защищены.</p>
         </div>
       </footer>
     </div>
