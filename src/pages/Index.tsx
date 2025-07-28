@@ -53,7 +53,7 @@ export default function Index() {
         description: 'Xbox Series X|S, Xbox One, ПК Windows 10/11'
       },
       {
-        title: 'Облачное стриминг',
+        title: 'Облачный гейминг',
         description: 'Играйте на телефоне, планшете и даже на слабых ПК'
       },
       {
