@@ -63,24 +63,30 @@ export default function Index() {
 
   const plans = [
     {
+      name: 'Старт',
       duration: '1 месяц',
       price: '990 ₽',
       originalPrice: '1390 ₽',
       savings: '400 ₽',
+      monthlyPrice: '990 ₽',
       popular: false
     },
     {
+      name: 'Оптимальный',
       duration: '3 месяца',
       price: '2690 ₽',
       originalPrice: '4170 ₽',
       savings: '1480 ₽',
+      monthlyPrice: '≈ 897 ₽',
       popular: true
     },
     {
+      name: 'Максимум выгоды',
       duration: '12 месяцев',
       price: '6990 ₽',
       originalPrice: '16680 ₽',
       savings: '9690 ₽',
+      monthlyPrice: '≈ 583 ₽',
       popular: false
     }
   ];
