@@ -17,6 +17,27 @@ export default function Index() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const seoContent = {
+    benefits: [
+      {
+        title: 'Более 500 игр в каталоге',
+        description: 'Игры EA Play, Forza, Halo, Starfield и многие другие хиты'
+      },
+      {
+        title: 'Работает на всех платформах',
+        description: 'Xbox Series X|S, Xbox One, ПК Windows 10/11'
+      },
+      {
+        title: 'Облачное стриминг',
+        description: 'Играйте на телефоне, планшете и даже на слабых ПК'
+      },
+      {
+        title: 'Мультиплеер онлайн',
+        description: 'Бесплатный Xbox Live Gold для онлайн-игр'
+      }
+    ]
+  };
+
   const openTelegram = () => {
     window.open('https://t.me/gameloop_bot', '_blank');
   };
@@ -88,16 +109,34 @@ export default function Index() {
 
   const faqs = [
     {
+      id: 'faq-bezopasno',
       question: 'Это безопасно?',
-      answer: 'Да, мы используем только официальные ключи от Microsoft. Ваш аккаунт останется в полной безопасности.'
+      answer: 'Да. Мы работаем с 2022 года, активировали тысячи подписок. Используем только проверенные каналы. Все покупки сопровождаются гарантией возврата или восстановлением.'
     },
     {
-      question: 'Как быстро происходит активация?',
-      answer: 'Обычно активация занимает от 5 до 30 минут после оплаты. В редких случаях может потребоваться до 2 часов.'
+      id: 'faq-aktivatsiya',
+      question: 'Как проходит активация подписки?',
+      answer: 'После оплаты мы активируем Xbox Game Pass Ultimate на ваш аккаунт или предоставим готовый. Всё работает без VPN. Обычно занимает 5–30 минут.'
     },
     {
-      question: 'Можно продлить свой аккаунт?',
-      answer: 'Да, вы можете продлить существующую подписку или активировать новую на том же аккаунте.'
+      id: 'faq-ofitsialno',
+      question: 'Это официальная подписка?',
+      answer: 'Да. Это полноценная подписка Xbox Game Pass Ultimate. Все функции работают — облако, EA Play, мультиплеер. Мы закупаем подписки через международные каналы.'
+    },
+    {
+      id: 'faq-progress',
+      question: 'Что с моими играми и сохранениями?',
+      answer: 'Если подписка на ваш аккаунт — все сохранения остаются. Если вы используете другой аккаунт — можно играть через домашнюю консоль, как на своём профиле.'
+    },
+    {
+      id: 'faq-podderzhka',
+      question: 'Что делать, если что-то не работает?',
+      answer: 'Свяжитесь с нашей поддержкой в Telegram или WhatsApp. Мы поможем на любом этапе: покупка, активация, продление.'
+    },
+    {
+      id: 'faq-garantiya',
+      question: 'Есть ли гарантия?',
+      answer: 'Да, подписка защищена гарантией на весь оплаченный срок. В случае сбоя — мы восстановим или вернём деньги. Всё честно.'
     }
   ];
 
@@ -114,10 +153,10 @@ export default function Index() {
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
-              <button onClick={() => scrollToSection('plans')} className="hover:text-xbox-green transition-colors">Тарифы</button>
-              <button onClick={() => scrollToSection('benefits')} className="hover:text-xbox-green transition-colors">Преимущества</button>
-              <button onClick={() => scrollToSection('reviews')} className="hover:text-xbox-green transition-colors">Отзывы</button>
-              <button onClick={() => scrollToSection('faq')} className="hover:text-xbox-green transition-colors">FAQ</button>
+              <a href="#tarify" onClick={() => scrollToSection('tarify')} className="hover:text-xbox-green transition-colors">Тарифы</a>
+              <a href="#chto-vkhodit" onClick={() => scrollToSection('chto-vkhodit')} className="hover:text-xbox-green transition-colors">Что входит</a>
+              <a href="#otzyvy" onClick={() => scrollToSection('otzyvy')} className="hover:text-xbox-green transition-colors">Отзывы</a>
+              <a href="#faq" onClick={() => scrollToSection('faq')} className="hover:text-xbox-green transition-colors">FAQ</a>
             </div>
             
             {/* Contact Icons */}
@@ -191,18 +230,20 @@ export default function Index() {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url('https://cdn.poehali.dev/files/b77fe6fe-4e41-4ff6-aec2-387775d25d92.png')` }}
+          role="img"
+          aria-label="геймпад Xbox Series"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/50 via-xbox-black/70 to-xbox-black" />
         
         <div className={`relative container mx-auto px-4 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-glow">
-            Xbox Game Pass Ultimate
+            Подписка Xbox Game Pass Ultimate
             <br />
             <span className="text-xbox-green">дешевле, чем в Microsoft Store</span>
           </h1>
           
           <p className="text-xl md:text-2xl font-body mb-8 text-xbox-gray max-w-3xl mx-auto">
-            Более 500 игр на Xbox и ПК. Моментальная активация. Поддержка 24/7
+            Купить официальную подписку Xbox Game Pass Ultimate — более 500 игр на Xbox Series X|S, Xbox One и ПК. Моментальная активация. Поддержка 24/7
           </p>
           
           <Button 
@@ -230,11 +271,32 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Pricing Plans */}
-      <section id="plans" className="py-20 bg-xbox-dark">
+      {/* What's Included */}
+      <section id="chto-vkhodit" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-glow">
-            Выберите свой тариф
+            Что входит в подписку
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {seoContent.benefits.map((benefit, index) => (
+              <div key={index} className="text-center animate-fade-in hover-scale" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="w-16 h-16 bg-xbox-green/20 border border-xbox-green rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name={index === 0 ? 'Gamepad2' : index === 1 ? 'Monitor' : index === 2 ? 'Cloud' : 'Users'} className="text-xbox-green" size={32} />
+                </div>
+                <h3 className="text-xl font-heading font-bold mb-2 text-xbox-white">{benefit.title}</h3>
+                <p className="text-xbox-gray text-sm">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Plans */}
+      <section id="tarify" className="py-20 bg-xbox-dark">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-glow">
+            Тарифы
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -273,10 +335,10 @@ export default function Index() {
       </section>
 
       {/* How it works */}
-      <section className="py-20">
+      <section id="aktivatsiya" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-glow">
-            Как это работает
+            Как проходит активация
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -319,7 +381,7 @@ export default function Index() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-20">
+      <section id="otzyvy" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12 text-glow">
             Отзывы клиентов
@@ -361,7 +423,7 @@ export default function Index() {
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border border-xbox-gray/30 rounded-lg bg-xbox-black">
-                  <AccordionTrigger className="px-6 py-4 text-left hover:text-xbox-green">
+                  <AccordionTrigger className="px-6 py-4 text-left hover:text-xbox-green" id={faq.id}>
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-xbox-gray">
@@ -379,6 +441,8 @@ export default function Index() {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-15 blur-sm"
           style={{ backgroundImage: `url('https://cdn.poehali.dev/files/40e65e02-745e-4e3c-9204-4b3d04a7d705.png')` }}
+          role="img"
+          aria-label="список игр Xbox Game Pass"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-xbox-black via-xbox-black/80 to-xbox-black/60" />
         
@@ -457,10 +521,21 @@ export default function Index() {
         </TooltipProvider>
       </div>
 
+      {/* SEO Content */}
+      <section className="py-16 bg-xbox-dark">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-xbox-gray">
+            <p className="text-lg leading-relaxed">
+              Купите подписку <strong className="text-xbox-green">Xbox Game Pass Ultimate</strong> по выгодной цене. Получите доступ к более чем <strong className="text-xbox-green">500 играм</strong>, включая EA Play, Forza Horizon, Halo, Starfield и другие хиты. Активация подписки возможна на <strong className="text-xbox-green">Xbox Series X|S, Xbox One и ПК</strong>. Мы предлагаем моментальную настройку, поддержку 24/7 и гарантию на весь срок действия.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 pb-20 lg:pb-8 border-t border-xbox-gray/30">
         <div className="container mx-auto px-4 text-center text-xbox-gray">
-          <p>&copy; 2024 Game Loop. Все права защищены.</p>
+          <p>&copy; 2024 Xbox Game Pass Ultimate Store. Купить подписку в России. Все права защищены.</p>
         </div>
       </footer>
     </div>
