@@ -8,6 +8,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import FAQSection from '@/components/FAQSection';
 import FinalCTASection from '@/components/FinalCTASection';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
+import WhyUsSection from '@/components/WhyUsSection';
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -148,6 +149,8 @@ export default function Index() {
       <Navigation scrollToSection={scrollToSection} />
       
       <HeroSection isVisible={isVisible} openTelegram={openTelegram} />
+      
+      <WhyUsSection />
       
       <BenefitsSection benefits={seoContent.benefits} />
       
