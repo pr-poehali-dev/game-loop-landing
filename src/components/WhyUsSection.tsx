@@ -2,55 +2,79 @@ import Icon from '@/components/ui/icon';
 
 const advantages = [
   {
-    icon: '✅',
-    text: 'Только официальная активация'
+    icon: 'Shield',
+    title: 'Только официальная активация',
+    description: 'Гарантированная работа подписки'
   },
   {
-    icon: '✅',
-    text: 'Более 10 000 довольных клиентов'
+    icon: 'Users',
+    title: 'Более 10 000 довольных клиентов',
+    description: 'Проверенный временем сервис'
   },
   {
-    icon: '✅',
-    text: 'Моментальная выдача в Telegram'
+    icon: 'Zap',
+    title: 'Моментальная выдача в Telegram',
+    description: 'Получите подписку за 5 минут'
   },
   {
-    icon: '✅',
-    text: 'Поддержка 24/7 и гарантия'
+    icon: 'Headphones',
+    title: 'Поддержка 24/7 и гарантия',
+    description: 'Помогаем в любое время'
   },
   {
-    icon: '✅',
-    text: 'Доступные цены'
+    icon: 'DollarSign',
+    title: 'Доступные цены',
+    description: 'Лучшие цены на рынке'
+  },
+  {
+    icon: 'Star',
+    title: 'Высокий рейтинг',
+    description: '4.9★ от наших клиентов'
   }
 ];
 
 export default function WhyUsSection() {
   return (
-    <section className="py-16 bg-xbox-black/50">
+    <section className="py-20 bg-[#0B0B0B]">
       <div className="container mx-auto px-4">
         {/* SEO-оптимизированная подводка */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-glow">
-            Почему тысячи геймеров выбирают Game Loop
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-glow">
+            Почему стоит выбрать Game Loop — выгодно, быстро, удобно
           </h2>
           <p className="text-lg text-xbox-gray max-w-4xl mx-auto leading-relaxed">
             Магазин подписок Xbox Game Pass с официальной активацией, моментальной доставкой и поддержкой 24/7
           </p>
         </div>
 
-        {/* Преимущества */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Преимущества в стиле BenefitsSection */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {advantages.map((advantage, index) => (
             <div 
               key={index}
-              className="flex items-center space-x-3 bg-xbox-dark/50 rounded-lg p-4 hover:bg-xbox-dark/70 transition-colors duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="text-center group animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <span className="text-2xl text-[#107C10] flex-shrink-0">
-                {advantage.icon}
-              </span>
-              <span className="text-white font-medium">
-                {advantage.text}
-              </span>
+              {/* Иконка в круге с свечением */}
+              <div className="relative mb-6 mx-auto">
+                <div className="w-20 h-20 bg-xbox-dark rounded-full flex items-center justify-center mx-auto border-2 border-xbox-green/30 shadow-lg shadow-xbox-green/20 group-hover:shadow-xbox-green/40 transition-all duration-300 group-hover:scale-110">
+                  <Icon 
+                    name={advantage.icon} 
+                    size={32} 
+                    className="text-[#107C10] group-hover:text-xbox-bright-green transition-colors duration-300" 
+                  />
+                </div>
+                {/* Внешнее свечение */}
+                <div className="absolute inset-0 w-20 h-20 bg-[#107C10]/10 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 mx-auto" />
+              </div>
+
+              {/* Текст */}
+              <h3 className="text-xl font-heading font-bold mb-3 text-xbox-white group-hover:text-xbox-bright-green transition-colors duration-300">
+                {advantage.title}
+              </h3>
+              <p className="text-xbox-gray leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                {advantage.description}
+              </p>
             </div>
           ))}
         </div>
