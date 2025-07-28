@@ -70,17 +70,17 @@ export default function Index() {
   const reviews = [
     {
       name: 'Виктор',
-      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично — Виктор',
+      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично',
       rating: 5
     },
     {
       name: 'Андрей',
-      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! — Андрей',
+      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! Рекомендую',
       rating: 5
     },
     {
       name: 'Анна',
-      text: 'Отличная поддержка, помогли разобраться с активацией — Анна',
+      text: 'Отличная поддержка, помогли разобраться с активацией',
       rating: 5
     }
   ];
@@ -141,7 +141,7 @@ export default function Index() {
           
           <Button 
             onClick={openTelegram}
-            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-8 animate-gentle-glow hover-scale"
+            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-lg px-8 py-4 mb-8 hover-scale shadow-lg shadow-xbox-green/30"
           >
             <Icon name="MessageCircle" className="mr-2" />
             Оформить через Telegram
@@ -175,7 +175,7 @@ export default function Index() {
             {plans.map((plan, index) => (
               <Card 
                 key={index} 
-                className={`bg-xbox-black border-2 ${plan.popular ? 'border-xbox-green animate-soft-glow' : 'border-xbox-gray/30'} hover-scale animate-fade-in`}
+                className={`bg-xbox-black border-2 ${plan.popular ? 'border-xbox-green shadow-lg shadow-xbox-green/20' : 'border-xbox-gray/30'} hover-scale animate-fade-in`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardContent className="p-6 text-center relative">
@@ -195,7 +195,7 @@ export default function Index() {
                   
                   <Button 
                     onClick={openTelegram}
-                    className="w-full bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold animate-soft-glow"
+                    className="w-full bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold shadow-md shadow-xbox-green/30"
                   >
                     Активировать
                   </Button>
@@ -268,7 +268,7 @@ export default function Index() {
                       {review.name[0]}
                     </div>
                     <div>
-                      <div className="font-bold">{review.name}</div>
+                      <div className="font-bold text-xbox-white">{review.name}</div>
                       <div className="flex text-xbox-green">
                         {[...Array(review.rating)].map((_, i) => (
                           <Icon key={i} name="Star" size={16} />
@@ -276,18 +276,7 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-xbox-gray">
-                    {review.text.includes('—') ? (
-                      <>
-                        {review.text.split('—')[0]}
-                        <span className="font-bold text-xbox-green">— {review.text.split('—')[1]}</span>
-                      </>
-                    ) : (
-                      <>
-                        {review.text} <span className="font-bold text-xbox-green">— {review.name}</span>
-                      </>
-                    )}
-                  </p>
+                  <p className="text-xbox-gray">{review.text}</p>
                 </CardContent>
               </Card>
             ))}
@@ -336,7 +325,7 @@ export default function Index() {
           
           <Button 
             onClick={openTelegram}
-            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-xl px-12 py-6 animate-gentle-glow hover-scale"
+            className="bg-xbox-green hover:bg-xbox-green/90 text-xbox-black font-bold text-xl px-12 py-6 hover-scale shadow-lg shadow-xbox-green/30"
           >
             <Icon name="MessageCircle" className="mr-2" size={24} />
             Оформить в Telegram

@@ -26,7 +26,7 @@ export default {
 				// Xbox brand colors
 				'xbox-black': '#000010',
 				'xbox-green': '#107C10',
-				'xbox-bright-green': '#00ff00',
+				'xbox-bright-green': '#00FF47',
 				'xbox-white': '#FFFFFF',
 				'xbox-gray': '#E1E1E1',
 				'xbox-dark': '#1A1A1A',
