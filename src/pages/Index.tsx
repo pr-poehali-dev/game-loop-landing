@@ -82,12 +82,13 @@ export default function Index() {
     },
     {
       name: 'Максимум выгоды',
-      duration: '12 месяцев',
+      duration: '12+1 месяц в подарок',
       price: '6990 ₽',
       originalPrice: '16680 ₽',
       savings: '9690 ₽',
-      monthlyPrice: '≈ 583 ₽',
-      popular: false
+      monthlyPrice: '≈ 538 ₽',
+      popular: false,
+      hasBonus: true
     }
   ];
 

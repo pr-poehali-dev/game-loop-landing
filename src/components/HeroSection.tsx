@@ -11,12 +11,13 @@ export default function HeroSection({ isVisible, openTelegram }: HeroSectionProp
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: `url('img/8b921259-6532-4dc5-9c1c-a1461a5976dc.jpg')` }}
+        className="absolute inset-0 bg-cover bg-center opacity-50"
+        style={{ backgroundImage: `url('https://cdn.poehali.dev/files/54afaebf-4039-4b2f-8114-91ef8d8e49b8.png')` }}
         role="img"
-        aria-label="Xbox Game Pass игры: Forza, Halo, Starfield"
+        aria-label="Xbox геймпад с цветными кнопками A, B, X, Y"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/60 via-xbox-black/80 to-xbox-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/40 via-xbox-black/70 to-xbox-black" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-xbox-black/30 to-xbox-black/60" />
       
       <div className={`relative container mx-auto px-4 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-glow">
