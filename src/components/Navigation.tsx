@@ -13,8 +13,7 @@ export default function Navigation({ scrollToSection }: NavigationProps) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleMenuItemClick = (id: string) => {
-    scrollToSection(id);
+  const handleMenuItemClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -31,10 +30,11 @@ export default function Navigation({ scrollToSection }: NavigationProps) {
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
-              <a href="#tarify" onClick={() => scrollToSection('tarify')} className="hover:text-xbox-green transition-colors">Тарифы</a>
-              <a href="#chto-vkhodit" onClick={() => scrollToSection('chto-vkhodit')} className="hover:text-xbox-green transition-colors">Что входит</a>
-              <a href="#otzyvy" onClick={() => scrollToSection('otzyvy')} className="hover:text-xbox-green transition-colors">Отзывы</a>
-              <a href="#faq" onClick={() => scrollToSection('faq')} className="hover:text-xbox-green transition-colors">FAQ</a>
+              <a href="/tarify" className="hover:text-xbox-green transition-colors">Тарифы</a>
+              <a href="/activation" className="hover:text-xbox-green transition-colors">Активация</a>
+              <a href="/reviews" className="hover:text-xbox-green transition-colors">Отзывы</a>
+              <a href="/faq" className="hover:text-xbox-green transition-colors">FAQ</a>
+              <a href="/support" className="hover:text-xbox-green transition-colors">Поддержка</a>
             </div>
             
             {/* Contact Icons */}
@@ -121,32 +121,39 @@ export default function Navigation({ scrollToSection }: NavigationProps) {
         }`}>
           <div className="container mx-auto px-4 py-6 space-y-4">
             <a 
-              href="#tarify" 
-              onClick={() => handleMenuItemClick('tarify')} 
+              href="/tarify" 
+              onClick={handleMenuItemClick}
               className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
             >
               Тарифы
             </a>
             <a 
-              href="#chto-vkhodit" 
-              onClick={() => handleMenuItemClick('chto-vkhodit')} 
+              href="/activation" 
+              onClick={handleMenuItemClick}
               className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
             >
-              Что входит
+              Активация
             </a>
             <a 
-              href="#otzyvy" 
-              onClick={() => handleMenuItemClick('otzyvy')} 
+              href="/reviews" 
+              onClick={handleMenuItemClick}
               className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
             >
               Отзывы
             </a>
             <a 
-              href="#faq" 
-              onClick={() => handleMenuItemClick('faq')} 
-              className="block py-3 text-lg hover:text-xbox-green transition-colors"
+              href="/faq" 
+              onClick={handleMenuItemClick}
+              className="block py-3 text-lg hover:text-xbox-green transition-colors border-b border-xbox-gray/20"
             >
               FAQ
+            </a>
+            <a 
+              href="/support" 
+              onClick={handleMenuItemClick}
+              className="block py-3 text-lg hover:text-xbox-green transition-colors"
+            >
+              Поддержка
             </a>
           </div>
         </div>

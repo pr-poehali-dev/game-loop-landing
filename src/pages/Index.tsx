@@ -10,6 +10,7 @@ import FinalCTASection from '@/components/FinalCTASection';
 import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 import WhyUsSection from '@/components/WhyUsSection';
 import QuestionsSection from '@/components/QuestionsSection';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,6 +18,25 @@ export default function Index() {
   const [hasShownLeadMagnet, setHasShownLeadMagnet] = useState(false);
 
   useEffect(() => {
+    // Set page title and meta description
+    document.title = 'Xbox Game Pass Ultimate — подписка со скидкой | Game Loop Store';
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Купить Xbox Game Pass Ultimate со скидкой в России. 500+ игр, быстрая активация за 5 минут. Поддержка 24/7, гарантия качества.');
+    }
+
+    // Open Graph meta tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Xbox Game Pass Ultimate — подписка со скидкой | Game Loop Store');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Купить Xbox Game Pass Ultimate со скидкой в России. 500+ игр, быстрая активация за 5 минут. Поддержка 24/7, гарантия качества.');
+    }
+
     setIsVisible(true);
     
     // Показываем лид-магнит через 10 секунд, если не показывали в этой сессии
@@ -146,7 +166,12 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-xbox-black text-xbox-white overflow-x-hidden">
+    <>
+      {/* Schema.org structured data */}
+      <SchemaMarkup type="organization" />
+      <SchemaMarkup type="website" />
+      
+      <div className="min-h-screen bg-xbox-black text-xbox-white overflow-x-hidden">
       <Navigation scrollToSection={scrollToSection} />
       
       <HeroSection isVisible={isVisible} openTelegram={openTelegram} />
@@ -193,16 +218,26 @@ export default function Index() {
             Все представленные на сайте цены и предложения не являются публичной офертой в соответствии со статьёй 437 ГК РФ.
           </p>
           
-          <div className="mt-6">
-            <a 
-              href="/gaming-pass"
-              className="inline-block bg-xbox-gray/20 hover:bg-xbox-green/20 text-xbox-gray hover:text-xbox-green text-sm px-4 py-2 rounded-md transition-all duration-300 border border-xbox-gray/30 hover:border-xbox-green/50"
-            >
-              Xbox Gaming Pass
-            </a>
+          <div className="mt-6 space-y-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="/tarify" className="hover:text-xbox-green transition-colors">Перейти к тарифам</a>
+              <a href="/activation" className="hover:text-xbox-green transition-colors">Как проходит активация</a>
+              <a href="/reviews" className="hover:text-xbox-green transition-colors">Отзывы клиентов</a>
+              <a href="/faq" className="hover:text-xbox-green transition-colors">Частые вопросы</a>
+              <a href="/support" className="hover:text-xbox-green transition-colors">Поддержка</a>
+            </div>
+            <div>
+              <a 
+                href="/gaming-pass"
+                className="inline-block bg-xbox-gray/20 hover:bg-xbox-green/20 text-xbox-gray hover:text-xbox-green text-sm px-4 py-2 rounded-md transition-all duration-300 border border-xbox-gray/30 hover:border-xbox-green/50"
+              >
+                Xbox Gaming Pass
+              </a>
+            </div>
           </div>
         </div>
       </footer>
     </div>
+    </>
   );
 }

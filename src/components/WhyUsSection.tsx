@@ -78,6 +78,33 @@ export default function WhyUsSection() {
             </div>
           ))}
         </div>
+
+        {/* CTA с внутренними ссылками */}
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold mb-6 text-xbox-white">
+            Узнайте больше о нашем сервисе
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
+              href="/activation" 
+              className="inline-block bg-xbox-green/10 hover:bg-xbox-green/20 text-xbox-green border border-xbox-green/30 hover:border-xbox-green/50 px-6 py-3 rounded-lg font-medium transition-all duration-300"
+            >
+              Как проходит активация
+            </a>
+            <a 
+              href="/reviews" 
+              className="inline-block bg-xbox-green/10 hover:bg-xbox-green/20 text-xbox-green border border-xbox-green/30 hover:border-xbox-green/50 px-6 py-3 rounded-lg font-medium transition-all duration-300"
+            >
+              Отзывы клиентов
+            </a>
+            <a 
+              href="/faq" 
+              className="inline-block bg-xbox-green/10 hover:bg-xbox-green/20 text-xbox-green border border-xbox-green/30 hover:border-xbox-green/50 px-6 py-3 rounded-lg font-medium transition-all duration-300"
+            >
+              Частые вопросы
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
