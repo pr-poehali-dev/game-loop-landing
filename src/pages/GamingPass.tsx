@@ -18,11 +18,11 @@ export default function GamingPass() {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'Xbox Gaming Pass — всё как вы искали, оформите со скидкой';
+    document.title = 'Xbox Gaming Pass — всё как вы искали, активация за 15 минут';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Искали Xbox Gaming Pass? Всё верно — вы попали по адресу. Официальная подписка Game Pass на 100+ игр. Быстро, удобно, поддержка 24/7.');
+      metaDescription.setAttribute('content', 'Часто ищут Xbox Gaming Pass — и попадают к нам. 500+ игр на Xbox и ПК. Быстрая активация, поддержка 24/7. 10000+ довольных клиентов');
     }
 
     setIsVisible(true);
@@ -127,8 +127,8 @@ export default function GamingPass() {
       <Navigation />
       
       <HeroSection 
-        title="Xbox Gaming Pass — 100+ игр, подписка со скидкой"
-        subtitle="Часто пишут Xbox Gaming Pass — это то же самое, что Xbox Game Pass. Мы активируем подписку быстро и со скидкой."
+        title="Xbox Gaming Pass — подписка на 500+ игр со скидкой"
+        subtitle="Вы искали Xbox Gaming Pass — это альтернативное название подписки Xbox Game Pass. Всё правильно — оформляйте подписку со скидкой!"
         isVisible={isVisible}
         openTelegram={openTelegram}
       />
