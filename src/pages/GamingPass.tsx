@@ -141,6 +141,36 @@ export default function GamingPass() {
       <QuestionsSection />
       <FAQSection />
       <FinalCTASection onOrderClick={openTelegram} />
+
+      {/* SEO Content */}
+      <section className="py-16 bg-xbox-dark">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-xbox-gray">
+            <p className="text-lg leading-relaxed">
+              У нас можно купить официальную подписку <strong className="text-xbox-green">Xbox Gaming Pass Ultimate</strong> — более <strong className="text-xbox-green">500 игр</strong> на Xbox Series X|S, Xbox One и ПК. Моментальная активация. Поддержка 24/7.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 pb-20 lg:pb-8 border-t border-xbox-gray/30">
+        <div className="container mx-auto px-4 text-center text-xbox-gray">
+          <p>&copy; 2025 Xbox Gaming Pass Ultimate Store. Купить подписку в России. Все права защищены.</p>
+          <p className="text-xs text-[#888888] mt-3 opacity-75">
+            Все представленные на сайте цены и предложения не являются публичной офертой в соответствии со статьёй 437 ГК РФ.
+          </p>
+          
+          <div className="mt-6">
+            <a 
+              href="/"
+              className="inline-block bg-xbox-gray/20 hover:bg-xbox-green/20 text-xbox-gray hover:text-xbox-green text-sm px-4 py-2 rounded-md transition-all duration-300 border border-xbox-gray/30 hover:border-xbox-green/50"
+            >
+              Xbox Game Pass
+            </a>
+          </div>
+        </div>
+      </footer>
       
       {showLeadMagnet && (
         <LeadMagnetPopup onClose={closeLeadMagnet} />

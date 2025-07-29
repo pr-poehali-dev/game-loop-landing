@@ -192,6 +192,15 @@ export default function Index() {
           <p className="text-xs text-[#888888] mt-3 opacity-75">
             Все представленные на сайте цены и предложения не являются публичной офертой в соответствии со статьёй 437 ГК РФ.
           </p>
+          
+          <div className="mt-6">
+            <a 
+              href="/gaming-pass"
+              className="inline-block bg-xbox-gray/20 hover:bg-xbox-green/20 text-xbox-gray hover:text-xbox-green text-sm px-4 py-2 rounded-md transition-all duration-300 border border-xbox-gray/30 hover:border-xbox-green/50"
+            >
+              Xbox Gaming Pass
+            </a>
+          </div>
         </div>
       </footer>
     </div>
