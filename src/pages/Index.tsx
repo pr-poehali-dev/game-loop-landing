@@ -35,7 +35,7 @@ export default function Index() {
   };
 
   const openTelegram = () => {
-    window.open('https://t.me/Game_Loop_Store_bot', '_blank');
+    window.open('https://t.me/submanag', '_blank');
   };
 
   const closeLeadMagnet = () => {
