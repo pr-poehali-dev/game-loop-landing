@@ -159,7 +159,7 @@ export default function GamingPass() {
       
       <HeroSection 
         title="Xbox Gaming Pass — подписка на 500+ игр со скидкой"
-        subtitle="Вы искали Xbox Gaming Pass — это альтернативное название подписки Xbox Game Pass. Всё правильно — оформляйте подписку со скидкой!"
+        subtitle="Вы искали Xbox Gaming Pass — и не зря. Это то же самое, что Xbox Game Pass: доступ к 500+ играм, включая хиты и новинки. Оформите подписку со скидкой и играйте без ограничений."
         isVisible={isVisible}
         openTelegram={openTelegram}
       />
