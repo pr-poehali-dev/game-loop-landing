@@ -112,6 +112,9 @@ export default function Activation() {
       <footer className="py-8 pb-20 lg:pb-8 border-t border-xbox-gray/30">
         <div className="container mx-auto px-4 text-center text-xbox-gray">
           <p>&copy; 2025 Game Loop Store. Все права защищены.</p>
+          <p className="text-xs text-[#888888] mt-3 opacity-75">
+            Информация на сайте не является публичной офертой.
+          </p>
           <div className="flex justify-center space-x-6 mt-4">
             <a href="/" className="hover:text-xbox-green transition-colors">Главная</a>
             <a href="/tarify" className="hover:text-xbox-green transition-colors">Тарифы</a>

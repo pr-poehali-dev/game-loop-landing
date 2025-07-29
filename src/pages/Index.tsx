@@ -215,7 +215,7 @@ export default function Index() {
         <div className="container mx-auto px-4 text-center text-xbox-gray">
           <p>&copy; 2025 Xbox Game Pass Ultimate Store. Купить подписку в России. Все права защищены.</p>
           <p className="text-xs text-[#888888] mt-3 opacity-75">
-            Все представленные на сайте цены и предложения не являются публичной офертой в соответствии со статьёй 437 ГК РФ.
+            Информация на сайте не является публичной офертой.
           </p>
           
           <div className="mt-6 space-y-4">

@@ -23,10 +23,10 @@ export default function Navigation({ scrollToSection }: NavigationProps) {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-xbox-black/90 backdrop-blur-sm border-b border-xbox-green/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Icon name="Gamepad2" className="text-xbox-green" size={32} />
               <span className="text-2xl font-heading font-bold text-glow">Game Loop</span>
-            </div>
+            </a>
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
