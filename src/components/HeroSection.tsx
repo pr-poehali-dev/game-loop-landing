@@ -3,11 +3,22 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
 interface HeroSectionProps {
-  isVisible: boolean;
-  openTelegram: () => void;
+  title?: string;
+  subtitle?: string;
+  onGetStarted?: () => void;
+  onLearnMore?: () => void;
+  isVisible?: boolean;
+  openTelegram?: () => void;
 }
 
-export default function HeroSection({ isVisible, openTelegram }: HeroSectionProps) {
+export default function HeroSection({ 
+  title = "Подписка Xbox Game Pass Ultimate", 
+  subtitle = "У нас можно купить официальную подписку Xbox Game Pass Ultimate — более 500 игр на Xbox Series X|S, Xbox One и ПК. \n\nМоментальная активация. Поддержка 24/7",
+  isVisible = true,
+  openTelegram = () => {},
+  onGetStarted,
+  onLearnMore 
+}: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
       <div 
@@ -21,14 +32,18 @@ export default function HeroSection({ isVisible, openTelegram }: HeroSectionProp
       
       <div className={`relative container mx-auto px-4 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-glow">
-          Подписка Xbox Game Pass Ultimate
-          <br />
-          <span className="text-xbox-green">дешевле, чем в Microsoft Store</span>
+          {title}
+          {title === "Xbox Gaming Pass — 100+ игр, подписка со скидкой" ? null : (
+            <>
+              <br />
+              <span className="text-xbox-green">дешевле, чем в Microsoft Store</span>
+            </>
+          )}
         </h1>
         
-        <p className="text-xl md:text-2xl font-body mb-8 text-xbox-gray max-w-3xl mx-auto">У нас можно купить официальную подписку Xbox Game Pass Ultimate — более 500 игр на Xbox Series X|S, Xbox One и ПК. 
-
-Моментальная активация. Поддержка 24/7</p>
+        <p className="text-xl md:text-2xl font-body mb-8 text-xbox-gray max-w-3xl mx-auto">
+          {subtitle}
+        </p>
         
         <Button 
           onClick={openTelegram}

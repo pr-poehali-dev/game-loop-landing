@@ -129,8 +129,8 @@ export default function GamingPass() {
       <HeroSection 
         title="Xbox Gaming Pass — 100+ игр, подписка со скидкой"
         subtitle="Часто пишут Xbox Gaming Pass — это то же самое, что Xbox Game Pass. Мы активируем подписку быстро и со скидкой."
-        onGetStarted={() => scrollToSection('pricing')}
-        onLearnMore={() => scrollToSection('benefits')}
+        isVisible={isVisible}
+        openTelegram={openTelegram}
       />
       
       <BenefitsSection benefits={seoContent.benefits} />
