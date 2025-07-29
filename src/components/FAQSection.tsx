@@ -7,10 +7,10 @@ interface FAQ {
 }
 
 interface FAQSectionProps {
-  faqs: FAQ[];
+  faqs?: FAQ[];
 }
 
-export default function FAQSection({ faqs }: FAQSectionProps) {
+export default function FAQSection({ faqs = [] }: FAQSectionProps) {
   return (
     <section id="faq" className="py-20 bg-xbox-dark">
       <div className="container mx-auto px-4">

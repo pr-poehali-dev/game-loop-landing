@@ -140,6 +140,39 @@ export default function GamingPass() {
     }
   ];
 
+  const faqs = [
+    {
+      id: 'faq-bezopasno',
+      question: 'Это безопасно?',
+      answer: 'Да. Мы работаем с 2022 года, активировали тысячи подписок. Используем только проверенные каналы. Все покупки сопровождаются гарантией возврата или восстановлением.'
+    },
+    {
+      id: 'faq-aktivatsiya',
+      question: 'Как проходит активация подписки?',
+      answer: 'После оплаты мы активируем Xbox Gaming Pass Ultimate на ваш аккаунт или предоставим готовый. Всё работает без VPN. Обычно занимает 5–30 минут.'
+    },
+    {
+      id: 'faq-ofitsialno',
+      question: 'Это официальная подписка?',
+      answer: 'Да. Это полноценная подписка Xbox Gaming Pass Ultimate. Все функции работают — облако, EA Play, мультиплеер. Мы закупаем подписки через международные каналы.'
+    },
+    {
+      id: 'faq-progress',
+      question: 'Что с моими играми и сохранениями?',
+      answer: 'Если подписка на ваш аккаунт — все сохранения остаются. Если вы используете другой аккаунт — можно играть через домашнюю консоль, как на своём профиле.'
+    },
+    {
+      id: 'faq-podderzhka',
+      question: 'Что делать, если что-то не работает?',
+      answer: 'Свяжитесь с нашей поддержкой в Telegram или WhatsApp. Мы поможем на любом этапе: покупка, активация, продление.'
+    },
+    {
+      id: 'faq-garantiya',
+      question: 'Есть ли гарантия?',
+      answer: 'Да, подписка защищена гарантией на весь оплаченный срок. В случае сбоя — мы восстановим или вернём деньги. Всё честно.'
+    }
+  ];
+
   return (
     <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <Navigation />
@@ -157,7 +190,7 @@ export default function GamingPass() {
       <ActivationSection />
       <ReviewsSection reviews={reviews} />
       <QuestionsSection />
-      <FAQSection />
+      <FAQSection faqs={faqs} />
       <FinalCTASection onOrderClick={openTelegram} />
 
       {/* SEO Content */}
