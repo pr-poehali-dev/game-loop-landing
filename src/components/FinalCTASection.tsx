@@ -7,14 +7,7 @@ interface FinalCTASectionProps {
 
 export default function FinalCTASection({ openTelegram }: FinalCTASectionProps) {
   return (
-    <section className="py-20 relative">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-15 blur-sm"
-        style={{ backgroundImage: `url('https://cdn.poehali.dev/files/40e65e02-745e-4e3c-9204-4b3d04a7d705.png')` }}
-        role="img"
-        aria-label="список игр Xbox Game Pass"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-xbox-black via-xbox-black/80 to-xbox-black/60" />
+    <section className="py-20 relative bg-gradient-to-t from-xbox-black via-gray-900 to-gray-800">
       
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 text-glow">

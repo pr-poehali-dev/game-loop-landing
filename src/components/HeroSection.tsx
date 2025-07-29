@@ -20,17 +20,7 @@ export default function HeroSection({
   onLearnMore 
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20">
-      <img 
-        src="https://cdn.poehali.dev/files/54afaebf-4039-4b2f-8114-91ef8d8e49b8.png"
-        alt="Xbox геймпад с цветными кнопками A, B, X, Y"
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/40 via-xbox-black/70 to-xbox-black" />
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-xbox-black/30 to-xbox-black/60" />
+    <section className="relative min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       
       <div className={`relative container mx-auto px-4 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-glow">
