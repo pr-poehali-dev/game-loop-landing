@@ -75,50 +75,30 @@ export default function GamingPass() {
     {
       name: 'Старт',
       duration: '1 месяц',
-      price: '599₽',
-      originalPrice: '899₽',
-      discount: '33%',
-      popular: false,
-      features: [
-        'Доступ к 100+ играм',
-        'EA Play включен',
-        'Онлайн мультиплеер',
-        'Облачный гейминг',
-        'Скидки до 20% на игры'
-      ]
+      price: '990 ₽',
+      originalPrice: '1390 ₽',
+      savings: '400 ₽',
+      monthlyPrice: '990 ₽',
+      popular: false
     },
     {
-      name: 'Оптимум',
+      name: 'Оптимальный',
       duration: '3 месяца',
-      price: '1599₽',
-      originalPrice: '2697₽',
-      discount: '41%',
-      popular: true,
-      features: [
-        'Доступ к 100+ играм',
-        'EA Play включен',
-        'Онлайн мультиплеер',
-        'Облачный гейминг',
-        'Скидки до 20% на игры',
-        'Приоритетная поддержка'
-      ]
+      price: '2690 ₽',
+      originalPrice: '4170 ₽',
+      savings: '1480 ₽',
+      monthlyPrice: '≈ 897 ₽',
+      popular: true
     },
     {
-      name: 'Максимум',
-      duration: '12 месяцев',
-      price: '5999₽',
-      originalPrice: '10788₽',
-      discount: '44%',
+      name: 'Максимум выгоды',
+      duration: '12+1 месяц в подарок',
+      price: '6990 ₽',
+      originalPrice: '16680 ₽',
+      savings: '9690 ₽',
+      monthlyPrice: '≈ 538 ₽',
       popular: false,
-      features: [
-        'Доступ к 100+ играм',
-        'EA Play включен',
-        'Онлайн мультиплеер',
-        'Облачный гейминг',
-        'Скидки до 20% на игры',
-        'Приоритетная поддержка',
-        'Максимальная экономия'
-      ]
+      hasBonus: true
     }
   ];
 
@@ -186,7 +166,7 @@ export default function GamingPass() {
       
       <BenefitsSection benefits={seoContent.benefits} />
       <WhyUsSection />
-      <PricingSection plans={plans} />
+      <PricingSection plans={plans} openTelegram={openTelegram} />
       <ActivationSection />
       <ReviewsSection reviews={reviews} />
       <QuestionsSection />
