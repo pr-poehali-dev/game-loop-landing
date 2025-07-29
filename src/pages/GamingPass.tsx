@@ -155,7 +155,7 @@ export default function GamingPass() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <Navigation />
+      <Navigation scrollToSection={scrollToSection} />
       
       <HeroSection 
         title="Xbox Gaming Pass — подписка на 500+ игр со скидкой"
