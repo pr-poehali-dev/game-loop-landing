@@ -76,9 +76,8 @@ export default function Support() {
                 <span className="text-2xl">💬</span>
               </div>
               <h3 className="text-2xl font-bold mb-4">WhatsApp</h3>
-              <p className="text-xbox-gray mb-6">
-                Удобное общение через мессенджер. Поддержка документами и скриншотами
-              </p>
+              <p className="text-xbox-gray mb-6">Удобное общение через мессенджер. Чтобы не потерять нас
+</p>
               <Button 
                 onClick={openWhatsApp}
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-3"
