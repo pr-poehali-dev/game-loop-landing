@@ -18,11 +18,22 @@ export default function GamingPass() {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'Xbox Gaming Pass — всё как вы искали, активация за 15 минут';
+    document.title = 'Xbox Gaming Pass — подписка Ultimate со скидкой | Более 500 игр на Xbox и ПК';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Часто ищут Xbox Gaming Pass — и попадают к нам. 500+ игр на Xbox и ПК. Быстрая активация, поддержка 24/7. 10000+ довольных клиентов');
+      metaDescription.setAttribute('content', 'Ищете Xbox Gaming Pass? Это та же подписка Xbox Game Pass Ultimate. 500+ игр, топовые релизы, мультиплеер и активация за 5 минут — оформите со скидкой.');
+    }
+
+    // Open Graph meta tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Xbox Gaming Pass — подписка Ultimate со скидкой | Более 500 игр на Xbox и ПК');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Ищете Xbox Gaming Pass? Это та же подписка Xbox Game Pass Ultimate. 500+ игр, топовые релизы, мультиплеер и активация за 5 минут — оформите со скидкой.');
     }
 
     setIsVisible(true);
