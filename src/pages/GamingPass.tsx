@@ -122,6 +122,24 @@ export default function GamingPass() {
     }
   ];
 
+  const reviews = [
+    {
+      name: 'Виктор',
+      text: 'Супер быстро! Уже третий месяц покупаю, всё работает отлично',
+      rating: 5
+    },
+    {
+      name: 'Андрей',
+      text: 'Заказал в 2 ночи, через 10 минут уже играл в Forza! Рекомендую',
+      rating: 5
+    },
+    {
+      name: 'Анна',
+      text: 'Отличная поддержка, помогли разобраться с активацией',
+      rating: 5
+    }
+  ];
+
   return (
     <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <Navigation />
@@ -137,7 +155,7 @@ export default function GamingPass() {
       <WhyUsSection />
       <PricingSection plans={plans} />
       <ActivationSection />
-      <ReviewsSection />
+      <ReviewsSection reviews={reviews} />
       <QuestionsSection />
       <FAQSection />
       <FinalCTASection onOrderClick={openTelegram} />

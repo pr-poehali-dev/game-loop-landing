@@ -8,10 +8,10 @@ interface Review {
 }
 
 interface ReviewsSectionProps {
-  reviews: Review[];
+  reviews?: Review[];
 }
 
-export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
+export default function ReviewsSection({ reviews = [] }: ReviewsSectionProps) {
   return (
     <section id="otzyvy" className="py-20">
       <div className="container mx-auto px-4">
