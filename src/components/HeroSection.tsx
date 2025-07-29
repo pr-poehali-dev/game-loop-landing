@@ -22,7 +22,7 @@ export default function HeroSection({
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
       <img 
-        src="/img/fb855a6a-4cd2-4865-8375-ab0b68a57a4b.jpg"
+        src="https://cdn.poehali.dev/files/6a9cc311-9413-4a40-a207-d7a7c555d885.png"
         alt="Xbox геймпад с цветными кнопками A, B, X, Y"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
         loading="eager"
