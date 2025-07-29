@@ -21,14 +21,20 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
-      <img 
-        src="https://cdn.poehali.dev/files/8042ca3f-9f4c-4908-8c7d-0c359d8f5bf7.png"
-        alt="Xbox геймпад с цветными кнопками A, B, X, Y"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-        loading="eager"
-        decoding="async"
-        fetchPriority="high"
-      />
+      <picture>
+        <source 
+          srcSet="https://cdn.poehali.dev/files/53c31e1a-6773-491c-8682-50cc601504b0.png" 
+          type="image/webp"
+        />
+        <img 
+          src="/img/fb855a6a-4cd2-4865-8375-ab0b68a57a4b.jpg"
+          alt="Xbox геймпад с цветными кнопками A, B, X, Y"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/60 via-xbox-black/80 to-xbox-black" />
       
       <div className={`relative container mx-auto px-4 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
