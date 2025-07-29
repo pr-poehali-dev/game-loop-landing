@@ -21,11 +21,13 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-50"
-        style={{ backgroundImage: `url('https://cdn.poehali.dev/files/54afaebf-4039-4b2f-8114-91ef8d8e49b8.png')` }}
-        role="img"
-        aria-label="Xbox геймпад с цветными кнопками A, B, X, Y"
+      <img 
+        src="https://cdn.poehali.dev/files/54afaebf-4039-4b2f-8114-91ef8d8e49b8.png"
+        alt="Xbox геймпад с цветными кнопками A, B, X, Y"
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-xbox-black/40 via-xbox-black/70 to-xbox-black" />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-xbox-black/30 to-xbox-black/60" />
